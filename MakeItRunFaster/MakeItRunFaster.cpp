@@ -365,3 +365,6 @@ void ref_qualifiers_on_member_functions()
 
 REGISTER_SAMPLE("ref qualifiers on member functions", ref_qualifiers_on_member_functions);
 #pragma endregion
+
+
+
