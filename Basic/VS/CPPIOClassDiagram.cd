@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="std::basic_ios&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="5.25" Y="2.25" Width="2" />
+    <NestedTypes>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::off_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::char_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::_Myos" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::_Mysb" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::_Ctype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::traits_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::int_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::_Myt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ios&lt;_Elem, _Traits&gt;::pos_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IEIABAAAAACAIAGAAAAAAEABAACAAAIAAUggAAKAgAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ios</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::ios_base" Collapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="std::ios_base::seek_dir" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Class Name="std::ios_base::Init" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Typedef Name="std::ios_base::open_mode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::ios_base::seekdir" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Enum Name="std::ios_base::event" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Struct Name="std::ios_base::_Fnarray" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Typedef Name="std::ios_base::fmtflags" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::ios_base::streampos" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::ios_base::iostate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::ios_base::streamoff" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Class Name="std::ios_base::failure" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Typedef Name="std::ios_base::openmode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::ios_base::io_state" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Struct Name="std::ios_base::_Iosarray" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Typedef Name="std::ios_base::event_callback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEEgDSIAIwSAAAEgWCAEAMAgoAQIABIAERiwBIABAAU=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\xiosbase</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_ofstream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="2.5" Y="5" Width="2.5" />
+    <NestedTypes>
+      <Typedef Name="std::basic_ofstream&lt;_Elem, _Traits&gt;::_Myt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ofstream&lt;_Elem, _Traits&gt;::_Mybase" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ofstream&lt;_Elem, _Traits&gt;::_Myfb" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_ofstream&lt;_Elem, _Traits&gt;::_Myios" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <InheritanceLine Type="std::basic_ostream&lt;_Elem, _Traits&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="4.5" Y="4.191" />
+        <Point X="4.5" Y="4.625" />
+        <Point X="3.75" Y="4.625" />
+        <Point X="3.75" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAgAACAAAAAAAAAAACAAAAAAAAAACAAAAYAgAAEEAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_ostream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAACAEAAAAAAAAAACCACAABAAAAAEAAAQggAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\ostream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_ifstream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="8.5" Y="5" Width="2.25" />
+    <InheritanceLine Type="std::basic_istream&lt;_Elem, _Traits&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="8.438" Y="4.191" />
+        <Point X="8.438" Y="4.625" />
+        <Point X="9.625" Y="4.625" />
+        <Point X="9.625" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAgAAAAAAAAAAAAIACAAAAAAAAAACAAAAYAgAAEBAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_istream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="2.25" />
+    <NestedTypes>
+      <Class Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Sentry_base" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Nget" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Myt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::pos_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Ctype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Class Name="std::basic_istream&lt;_Elem, _Traits&gt;::sentry" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::off_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Iter" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::_Myios" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_istream&lt;_Elem, _Traits&gt;::int_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAEAAAQAAaAAAAhAACACQgEACAQAAAAAAQAgAAEQAIA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_fstream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="4" Y="6.5" Width="2.25" />
+    <NestedTypes>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::pos_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::char_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::_Myfb" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::_Mybase" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::traits_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::int_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::_Myt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::_Myios" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::basic_fstream&lt;_Elem, _Traits&gt;::off_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IAgQAAAAAAAAAAAAACAAAAAAAAAACCAAAYAgAAEAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\fstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_iostream&lt;_Elem, _Traits&gt;" Collapsed="true">
+    <Position X="5.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\istream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_stringstream&lt;_Elem, _Traits, _Alloc&gt;" Collapsed="true">
+    <Position X="6.5" Y="6.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>IAgAAgAAAAAAAAAAAAAAAAAAAAAEAGAAAQAgAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\sstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_ostringstream&lt;_Elem, _Traits, _Alloc&gt;" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="3.25" />
+    <InheritanceLine Type="std::basic_ostream&lt;_Elem, _Traits&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="4.5" Y="4.191" />
+        <Point X="4.5" Y="4.625" />
+        <Point X="2.125" Y="4.625" />
+        <Point X="2.125" Y="6.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAgAAAAAAAAAgAAAAAAAAAAAAAAEACAAAQAgAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\sstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::basic_istringstream&lt;_Elem, _Traits, _Alloc&gt;" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="3" />
+    <InheritanceLine Type="std::basic_istream&lt;_Elem, _Traits&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="8.438" Y="4.191" />
+        <Point X="8.438" Y="4.625" />
+        <Point X="11.25" Y="4.625" />
+        <Point X="11.25" Y="6.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAgAAAAAAAAAAAAAAAAAAAAAAAAUACAAAQAgAIAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft visual studio 10.0\vc\include\sstream</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
