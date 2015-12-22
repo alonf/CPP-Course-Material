@@ -5,17 +5,13 @@
 #include <string>
 #include <regex>
 #include <iterator>
-#ifdef WIN32
-#define SOURCE_PATH R"(..\..\CPPKeywords.cpp)"
-#else
-	#define SOURCE_PATH R"(../../CPPKeywords.cpp)"
-#endif
 
 using namespace std;
 
 int main()
 {
-	auto file = ifstream(SOURCE_PATH);
+	auto file = ifstream(__FILE__);
+
 	if (file.bad())
 		return -1;
 

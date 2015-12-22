@@ -11,7 +11,7 @@
 #include <numeric>
 #include <iterator>
 using namespace std;
-
+#pragma warning( disable : 4068 )
 #pragma GCC diagnostic ignored "-Wunused-variable"
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 
