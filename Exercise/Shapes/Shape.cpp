@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include <ostream>
 
 namespace Shapes
 {

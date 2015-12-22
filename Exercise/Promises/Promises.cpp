@@ -33,7 +33,7 @@ int main()
 	auto f = [](int x, int y)
 	{ 
 		if (y == 0)
-			throw exception("Divide by zero");
+			throw invalid_argument("Divide by zero");
 		return x / y;
 	};
 

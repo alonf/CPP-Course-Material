@@ -11,7 +11,7 @@
 using namespace std;
 using namespace Shapes;
 
-void main()
+int main()
 {
 	shape_ptr r1 = new Rectangle("R1", 20, 40);
 	shape_ptr c1 = new Circle("C1", 20);
@@ -32,5 +32,7 @@ void main()
 	delete c1;
 	
 	canvas.Draw();
+
+	return 0;
 }
 

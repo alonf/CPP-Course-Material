@@ -4,10 +4,10 @@
 #include <memory>
 #include <assert.h>
 
-class IGate abstract
+class IGate
 {
 public:
-	virtual bool Output() const abstract;
+	virtual bool Output() const = 0;
 };
 
 template<typename... Inputs>
@@ -19,7 +19,7 @@ private:
 public:
 	Gate(const std::function<bool(const Inputs&...)> &logicFunction,
 		const Inputs&... inputs)
-		: m_logicFunction(std::bind(logicFunction, cref(inputs)...)) {}
+		: m_logicFunction(std::bind(logicFunction, std::cref(inputs)...)) {}
 	
 	bool Output() const override
 	{

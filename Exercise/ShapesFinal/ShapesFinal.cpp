@@ -11,7 +11,7 @@
 using namespace std;
 using namespace Shapes;
 
-void main()
+int main()
 {
 	shape_ptr r1 = make_shared<Rectangle>("R1", 20, 40);
 	shape_ptr c1 = make_shared<Circle>("C1", 20);
@@ -32,5 +32,7 @@ void main()
 	c1.reset();
 
 	canvas.Draw();
+
+	return 0;
 }
 
