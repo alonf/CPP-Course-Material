@@ -7,21 +7,20 @@
 #include <vector>
 #include <condition_variable>
 #include <atomic>
-
 namespace BTSE //Best Task Scheduler Ever
 {
 	class DefaultTaskScheduler :
 		public TaskScheduler
 	{
 	private:
-		std::atomic<unsigned int> m_nQueued;
-		std::atomic<unsigned int> m_nThreads;
-		std::atomic<bool> m_exiting;
+		std::atomic<unsigned int> m_nQueued { 0};
+		std::atomic<unsigned int> m_nThreads { 0};
+		std::atomic<bool> m_exiting { false};
 		std::stack<Task_ptr> m_taskQueue;
 		std::mutex m_taskQueueMutex, m_workerThreadMutex;
 		std::condition_variable m_taskAvailable;
 		std::stack<std::thread> m_workerThreads;
-		std::atomic<unsigned int> m_running;
+		std::atomic<unsigned int> m_running { 0};
 		std::vector<std::thread> m_threads;
 
 		void ReleaseAllThreads() noexcept;
