@@ -12,6 +12,8 @@
 #include <iterator>
 using namespace std;
 
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 
 #pragma region Menu
 
@@ -30,7 +32,7 @@ register_sample::register_sample(const char *name, function<void(void)> f)
 int register_sample::n_entry = 1;
 
 #define REGISTER_SAMPLE(DESCRIPTION, FUNCTION) \
-	register_sample FUNCTION##_sample(DESCRIPTION, &##FUNCTION)
+	register_sample FUNCTION##_sample(DESCRIPTION, &FUNCTION)
 
 
 int main()

@@ -14,6 +14,11 @@
 
 using namespace std;
 
+//Make GCC take NULL as C++ 2003
+#ifdef __GNUG__
+#undef NULL
+#define NULL 0
+#endif
 
 #pragma region Menu
 
@@ -32,7 +37,7 @@ register_sample::register_sample(const char *name, function<void(void)> f)
 int register_sample::n_entry = 1;
 
 #define REGISTER_SAMPLE(DESCRIPTION, FUNCTION) \
-	register_sample FUNCTION##_sample(DESCRIPTION, &##FUNCTION)
+	register_sample FUNCTION##_sample(DESCRIPTION, &FUNCTION)
 
 
 int main()
@@ -233,10 +238,10 @@ void exception_ptr_sample()
 		{
 			stringstream msg;
 			msg << "Error in thread id: " << this_thread::get_id();
-			throw exception(msg.str().c_str());
+			throw runtime_error(msg.str().c_str());
 		});
 	}
-	catch (exception e)
+	catch (exception &e)
 	{
 		cout << "Current thread id: " << this_thread::get_id() << endl;
 		cout << e.what() << endl;

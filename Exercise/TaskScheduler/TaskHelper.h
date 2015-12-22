@@ -1,13 +1,14 @@
 #pragma once
 #include "DefaultTaskScheduler.h"
 #include "GenericTask.h"
+#include <memory>
 
 namespace BTSE //Best Task Scheduler Ever
 {
 	template<typename TScheduler = DefaultTaskScheduler>
 	TaskScheduler_ptr CreateScheduler(unsigned int concurrencyLevel = 0) noexcept
 	{
-		return static_pointer_cast<TaskScheduler>(make_shared<TScheduler>(concurrencyLevel));
+		return std::static_pointer_cast<TaskScheduler>(std::make_shared<TScheduler>(concurrencyLevel));
 	}
 
 	template<typename TResult, typename ...Args>
@@ -31,6 +32,6 @@ namespace BTSE //Best Task Scheduler Ever
 	template<typename TResult>
 	TResult GetResult(Task_ptr task)
 	{
-		return static_pointer_cast<GenericTask<TResult>>(task)->GetResult();
+		return std::static_pointer_cast<GenericTask<TResult>>(task)->GetResult();
 	}
 }

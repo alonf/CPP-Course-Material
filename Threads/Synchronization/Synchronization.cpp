@@ -69,7 +69,7 @@ int main()
 
 
 	//with atomic operation
-	atomic<int> atomic_counter = 0;
+	atomic<int> atomic_counter(0);
 	ftr.clear();
 
 	for (int i = 0; i < 100000; ++i)

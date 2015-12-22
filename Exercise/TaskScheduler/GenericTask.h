@@ -12,14 +12,14 @@ namespace BTSE //Best Task Scheduler Ever
 		friend class Task;
 		friend class DefaultTaskScheduler;
 		
-		template<typename TResult>
-		friend TResult GetResult(Task_ptr task);
+		template<typename FResult>
+		friend FResult GetResult(Task_ptr task);
 
-		template<typename TResult, typename ...Args>
-		friend std::shared_ptr<Task> RunTask(TaskScheduler_ptr taskScheduler, std::function<TResult(Args...)> func, Args... args) noexcept(false);
+		template<typename FResult, typename ...Args>
+		friend std::shared_ptr<Task> RunTask(TaskScheduler_ptr taskScheduler, std::function<FResult(Args...)> func, Args... args) noexcept(false);
 
-		template<typename TResult, typename ...Args>
-		friend std::shared_ptr<Task> RunTask(std::function<TResult(Args...)> func, Args... args) noexcept(false);
+		template<typename FResult, typename ...Args>
+		friend std::shared_ptr<Task> RunTask(std::function<FResult(Args...)> func, Args... args) noexcept(false);
 
 	private:
 		std::packaged_task<TResult()> m_func;

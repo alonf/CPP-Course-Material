@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <chrono>
+#include <cstring>
 using namespace std;
 
 
@@ -26,7 +27,7 @@ register_sample::register_sample(const char *name, function<void(void)> f)
 int register_sample::n_entry = 1;
 
 #define REGISTER_SAMPLE(DESCRIPTION, FUNCTION) \
-	register_sample FUNCTION##_sample(DESCRIPTION, &##FUNCTION)
+	register_sample FUNCTION##_sample(DESCRIPTION, &FUNCTION)
 
 
 int main()
@@ -88,7 +89,11 @@ public:
 
 		_length = strlen(str) + 1;
 		_string = new char[_length];
+#ifdef WIN32
 		strcpy_s(_string, _length, str);
+#else
+		strcpy(_string, str);
+#endif
 	}
 
 	explicit my_string_old(int length)
@@ -108,7 +113,11 @@ public:
 		}
 
 		_string = new char[_length];
+#ifdef WIN32
 		strcpy_s(_string, _length, other._string);
+#else
+		strcpy(_string, other._string);
+#endif
 	}
 
 	my_string_old& operator=(const my_string_old& other)
@@ -124,7 +133,12 @@ public:
 		if (other._string != nullptr)
 		{
 			_string = new char[_length];
-			strcpy_s(_string, _length, other._string);
+
+#ifdef WIN32
+		strcpy_s(_string, _length, other._string);
+#else
+		strcpy(_string, other._string);
+#endif
 		}
 	}
 	~my_string_old()
@@ -155,7 +169,11 @@ public:
 		}
 		_length = strlen(str) + 1;
 		_string = new char[_length];
+#ifdef WIN32
 		strcpy_s(_string, _length, str);
+#else
+		strcpy(_string, str);
+#endif
 	}
 
 	explicit my_string_new(int length)
@@ -175,7 +193,11 @@ public:
 		}
 
 		_string = new char[_length];
+#ifdef WIN32
 		strcpy_s(_string, _length, other._string);
+#else
+		strcpy(_string, other._string);
+#endif
 	}
 
 	my_string_new& operator=(const my_string_new& other)
@@ -192,7 +214,11 @@ public:
 		if (other._string != nullptr)
 		{
 			_string = new char[_length];
+#ifdef WIN32
 			strcpy_s(_string, _length, other._string);
+#else
+			strcpy(_string, other._string);
+#endif
 		}
 	}
 	~my_string_new()
@@ -208,7 +234,7 @@ public:
 	//move functions:
 	my_string_new(my_string_new&& other)
 	{
-		*this = std::move(other); //std::move preserves && semantics so operator=(&&) is called
+		*this = std::move(other); //alonf::move preserves && semantics so operator=(&&) is called
 	}
 
 
@@ -274,12 +300,12 @@ class Target
 {
 
 public:
-	void Action(typename remove_reference<T>::type &) { cout << "Action(T&)" << endl; };
+	void Action(const typename remove_reference<T>::type &) { cout << "Action(T&)" << endl; };
 	void Action(typename remove_reference<T>::type &&) { cout << "Action(T&&)" << endl; };
 };
 
 template <typename T>
-void old_forward(T& value)
+void old_forward(const T& value)
 {
 	cout << "old_forward(T& value) ==> ";
 	Target<T> target;

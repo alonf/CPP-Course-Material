@@ -42,9 +42,9 @@ int main()
 
 	try
 	{
-		RunTask(FFL([] { throw exception("Exception Demo...");}))->ThrowWait();
+		RunTask(FFL([] { throw runtime_error("Exception Demo...");}))->ThrowWait();
 	}
-	catch (exception e)
+	catch (exception &e)
 	{
 		cout << e.what() << endl;
 	}

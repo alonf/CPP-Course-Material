@@ -11,7 +11,7 @@ namespace BTSE //Best Task Scheduler Ever
 	typedef std::shared_ptr<Task> Task_ptr;
 	typedef std::shared_ptr<TaskScheduler> TaskScheduler_ptr;
 
-	class TaskScheduler abstract : public std::enable_shared_from_this<TaskScheduler>
+	class TaskScheduler : public std::enable_shared_from_this<TaskScheduler>
 	{
 		friend class Task;
 		static std::once_flag m_defualtSchedulerOneTimeInitFlag;
@@ -38,7 +38,7 @@ namespace BTSE //Best Task Scheduler Ever
 		//Make this Task Scheduler the current ambient task scheduler and return the previous
 		TaskScheduler_ptr MakeCurrent() noexcept(false);
 
-		virtual void QueueTask(Task_ptr task) noexcept(false) abstract;
+		virtual void QueueTask(Task_ptr task) noexcept(false) = 0;
 
 		//cancel all queued tasks
 		virtual void CancelAllTasks() noexcept {};

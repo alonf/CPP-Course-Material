@@ -7,6 +7,8 @@
 #include <sstream>
 #include <array>
 #include <numeric>
+#include <vector>
+#include <functional>
 using namespace std;
 
 
@@ -27,7 +29,7 @@ register_sample::register_sample(const char *name, function<void(void)> f)
 int register_sample::n_entry = 1;
 
 #define REGISTER_SAMPLE(DESCRIPTION, FUNCTION) \
-	register_sample FUNCTION##_sample(DESCRIPTION, &##FUNCTION)
+	register_sample FUNCTION##_sample(DESCRIPTION, &FUNCTION)
 
 
 int main()
@@ -128,7 +130,11 @@ int static_assertions()
 {
 	int a, b;
 	Swap(a, b);
+#ifdef WIN32
 #pragma warning (disable: 4101)
+#else
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#endif
 	// ReSharper disable once CppEntityNeverUsed
 	data_structure<int> ds_ok;
 	
@@ -158,7 +164,11 @@ int static_assertions()
 	static_assert(fibo<4>::value == 5, "Definition for 4 is wrong");
 	static_assert(fibo<5>::value == 8, "Definition for 5 is wrong");
 
+#ifdef WIN32
 	static_assert(sizeof(long) == sizeof(int), "What compiler are you using?? Your ints aren't long!");
+#else
+	static_assert(sizeof(long) != sizeof(int), "What compiler are you using?? Your ints aren't long!");
+#endif
 
 	return staticAssertLineNumber;
 	
