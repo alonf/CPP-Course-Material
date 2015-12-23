@@ -308,3 +308,32 @@ REGISTER_SAMPLE("constexpr", constexpr_sample);
 #pragma endregion
 
 
+#pragma region attributes
+
+[[ noreturn ]] void just_throws()
+{
+	throw "error...";
+}
+
+[[ deprecated ]] void consider_using_another_function()
+{
+	cout << "There must be a better newer way to do that." << endl;
+	cout << "It also generates a compilation warning." << endl;
+}
+
+void attributes_sample()
+{
+	try
+	{
+		just_throws();
+	}
+	catch (...)
+	{
+
+	}
+	consider_using_another_function();
+}
+
+REGISTER_SAMPLE("C++ attributes", attributes_sample);
+#pragma endregion
+
