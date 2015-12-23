@@ -1,6 +1,5 @@
 #include "register_sample.h"
 #include <iostream>
-#include <iomanip>
 #include <algorithm>
 #include <vector>
 #include <memory>
