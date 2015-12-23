@@ -291,6 +291,14 @@ int RTAdd(int a, int b)
 	return a + b;
 }
 
+constexpr int extended_constexpr_sum(bool odd = false)
+{
+	int reminder = odd == false ? 1 : 0;
+	int sum = 0;
+	for (int i = 1; i <= 100; ++i)
+		sum += (i % 2 == reminder) ? i : 0;
+	return sum;
+}
 void constexpr_sample()
 {
 	int a = Add(10, 32);
@@ -302,6 +310,9 @@ void constexpr_sample()
 	cin >> b >> c;
 	a = Add(b, c);
 	cout << a << endl;
+
+	cout << "The sum of all odds is: " << extended_constexpr_sum(true) << endl;
+	cout << "The sum of all evens is: " << extended_constexpr_sum() << endl;;
 }
 
 REGISTER_SAMPLE("constexpr", constexpr_sample);
