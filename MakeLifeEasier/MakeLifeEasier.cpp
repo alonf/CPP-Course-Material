@@ -1,5 +1,6 @@
 #include "register_sample.h"
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
 #include <vector>
 #include <memory>
@@ -88,6 +89,34 @@ void Cpp14_digit_separators_sample()
 REGISTER_SAMPLE("C++1'4 digit separators", Cpp14_digit_separators_sample);
 #pragma endregion
 
+
+#pragma region C++14 binary literals
+string ConvertToBinAlpha(int n)
+{
+	string result;
+	for (unsigned char i = 0; i < sizeof(n) * 8; ++i)
+	{
+		result = (n & 1 ? "1"s : "0"s) + result;
+		n >>= 1;
+	}
+	return result;
+}
+
+void Cpp14_binary_literals_sample()
+{
+	auto bin = 0b1010'1010;
+	auto oct = 010'101'010;
+	auto dec = 10'101'010;
+	auto hex = 0x1010'1010;
+
+	cout << "Bin:" << ConvertToBinAlpha(bin) << " Dec:" << std::dec << bin << endl;
+	cout << "Oct:" << std::oct << oct << " Dec:" << std::dec << oct << endl;
+	cout << "Dec:" << std::dec << dec << " Dec:" << std::dec << dec << endl;
+	cout << "Hex:" << std::hex << hex << " Dec:" << std::dec << hex << endl;
+}
+
+REGISTER_SAMPLE("C++14 binary literals", Cpp14_binary_literals_sample);
+#pragma endregion
 
 #pragma region Auto Variables
 
