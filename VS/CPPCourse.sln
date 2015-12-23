@@ -67,6 +67,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleThreading", "..\Threa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Synchronization", "..\Threads\Synchronization\VS\Synchronization.vcxproj", "{B46C57AF-63DA-4551-B98B-369EFC943D44}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CPP17_experimental", "CPP17_experimental", "{B53B3B7E-87DB-4874-8186-6A461BB5BD0A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generators", "..\CPP17Experimental\Generators\Generators.vcxproj", "{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -283,6 +287,14 @@ Global
 		{B46C57AF-63DA-4551-B98B-369EFC943D44}.Release|x64.Build.0 = Release|x64
 		{B46C57AF-63DA-4551-B98B-369EFC943D44}.Release|x86.ActiveCfg = Release|Win32
 		{B46C57AF-63DA-4551-B98B-369EFC943D44}.Release|x86.Build.0 = Release|Win32
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Debug|x64.ActiveCfg = Debug|x64
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Debug|x64.Build.0 = Debug|x64
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Debug|x86.ActiveCfg = Debug|Win32
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Debug|x86.Build.0 = Debug|Win32
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x64.ActiveCfg = Release|x64
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x64.Build.0 = Release|x64
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x86.ActiveCfg = Release|Win32
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -311,5 +323,6 @@ Global
 		{26E0F063-A387-4A55-AA32-78BA71B0994E} = {5BB2CB4D-77DB-49B4-BF00-73919F0E11CE}
 		{0A0A490B-8EFC-4923-A706-EA21E95D1124} = {5BB2CB4D-77DB-49B4-BF00-73919F0E11CE}
 		{B46C57AF-63DA-4551-B98B-369EFC943D44} = {5BB2CB4D-77DB-49B4-BF00-73919F0E11CE}
+		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417} = {B53B3B7E-87DB-4874-8186-6A461BB5BD0A}
 	EndGlobalSection
 EndGlobal
