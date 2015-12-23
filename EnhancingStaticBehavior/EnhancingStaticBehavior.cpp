@@ -291,9 +291,8 @@ int RTAdd(int a, int b)
 	return a + b;
 }
 #ifndef WIN32
-constexpr int extended_constexpr_sum(bool odd = false)
+constexpr int extended_constexpr_sum(int reminder)
 {
-	int reminder = odd == false ? 1 : 0;
 	int sum = 0;
 	for (int i = 1; i <= 100; ++i)
 		sum += (i % 2 == reminder) ? i : 0;
@@ -313,12 +312,37 @@ void constexpr_sample()
 	cout << a << endl;
 
 #ifndef WIN32
-	cout << "The sum of all odds is: " << extended_constexpr_sum(true) << endl;
-	cout << "The sum of all evens is: " << extended_constexpr_sum() << endl;;
+	cout << "The sum of all odds is: " << extended_constexpr_sum(1) << endl;
+	cout << "The sum of all evens is: " << extended_constexpr_sum(0) << endl;;
 #endif
 }
 
 REGISTER_SAMPLE("constexpr", constexpr_sample);
+#pragma endregion
+
+
+#pragma region variable template
+
+#ifndef WIN32
+template<typename T>
+	constexpr T pi = T(3.14159265358979323856);
+
+template<typename T>
+constexpr T area_of_circle_with_radius(T r)
+{
+	return pi<T> * r * r;
+}
+
+void variable_template()
+{
+	cout.precision(10);
+	cout << "int: " << area_of_circle_with_radius<int>(10) << endl;
+	cout << "float: " << area_of_circle_with_radius<float>(10) << endl;
+	cout << "double: " << area_of_circle_with_radius<double>(10) << endl;
+}
+
+REGISTER_SAMPLE("Variable Template", variable_template);
+#endif
 #pragma endregion
 
 
