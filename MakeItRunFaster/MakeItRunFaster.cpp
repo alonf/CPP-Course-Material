@@ -76,7 +76,7 @@ class my_string_old
 {
 private:
 	char* _string;
-	int _length;
+	unsigned int _length;
 public:
 	explicit my_string_old(const char* str)
 	{
@@ -87,9 +87,9 @@ public:
 			return;
 		}
 
-		_length = strlen(str) + 1;
+		_length = static_cast<unsigned int>(strlen(str) + 1);
 		_string = new char[_length];
-#ifdef WIN32
+#ifdef _WIN32
 		strcpy_s(_string, _length, str);
 #else
 		strcpy(_string, str);
@@ -113,7 +113,7 @@ public:
 		}
 
 		_string = new char[_length];
-#ifdef WIN32
+#ifdef _WIN32
 		strcpy_s(_string, _length, other._string);
 #else
 		strcpy(_string, other._string);
@@ -134,12 +134,13 @@ public:
 		{
 			_string = new char[_length];
 
-#ifdef WIN32
+#ifdef _WIN32
 		strcpy_s(_string, _length, other._string);
 #else
 		strcpy(_string, other._string);
 #endif
 		}
+		return *this;
 	}
 	~my_string_old()
 	{
@@ -167,9 +168,9 @@ public:
 			_string = nullptr;
 			return;
 		}
-		_length = strlen(str) + 1;
+		_length = static_cast<unsigned int>(strlen(str) + 1);
 		_string = new char[_length];
-#ifdef WIN32
+#ifdef _WIN32
 		strcpy_s(_string, _length, str);
 #else
 		strcpy(_string, str);
@@ -193,7 +194,7 @@ public:
 		}
 
 		_string = new char[_length];
-#ifdef WIN32
+#ifdef _WIN32
 		strcpy_s(_string, _length, other._string);
 #else
 		strcpy(_string, other._string);
@@ -214,12 +215,13 @@ public:
 		if (other._string != nullptr)
 		{
 			_string = new char[_length];
-#ifdef WIN32
+#ifdef _WIN32
 			strcpy_s(_string, _length, other._string);
 #else
 			strcpy(_string, other._string);
 #endif
 		}
+		return *this;
 	}
 	~my_string_new()
 	{

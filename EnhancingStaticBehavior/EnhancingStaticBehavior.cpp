@@ -130,7 +130,7 @@ int static_assertions()
 {
 	int a, b;
 	Swap(a, b);
-#ifdef WIN32
+#ifdef _WIN32
 #pragma warning (disable: 4101)
 #else
 #pragma GCC diagnostic ignored "-Wunused-variable"
@@ -164,7 +164,7 @@ int static_assertions()
 	static_assert(fibo<4>::value == 5, "Definition for 4 is wrong");
 	static_assert(fibo<5>::value == 8, "Definition for 5 is wrong");
 
-#ifdef WIN32
+#ifdef _WIN32
 	static_assert(sizeof(long) == sizeof(int), "What compiler are you using?? Your ints aren't long!");
 #else
 	static_assert(sizeof(long) != sizeof(int), "What compiler are you using?? Your ints aren't long!");
@@ -290,7 +290,7 @@ int RTAdd(int a, int b)
 {
 	return a + b;
 }
-#ifndef WIN32
+#ifndef _WIN32
 constexpr int extended_constexpr_sum(int reminder)
 {
 	int sum = 0;
@@ -311,7 +311,7 @@ void constexpr_sample()
 	a = Add(b, c);
 	cout << a << endl;
 
-#ifndef WIN32
+#ifndef _WIN32
 	cout << "The sum of all odds is: " << extended_constexpr_sum(1) << endl;
 	cout << "The sum of all evens is: " << extended_constexpr_sum(0) << endl;;
 #endif
@@ -323,7 +323,7 @@ REGISTER_SAMPLE("constexpr", constexpr_sample);
 
 #pragma region variable template
 
-#ifndef WIN32
+#ifndef _WIN32
 template<typename T>
 	constexpr T pi = T(3.14159265358979323856);
 
