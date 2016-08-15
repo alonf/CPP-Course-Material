@@ -18,7 +18,7 @@ mutex queue_mutex;
 
 void producer()
 {
-	for (int i = 1; i <= 100; ++i)
+	for (int i = 1; i <= 1000; ++i)
 	{
 		lock_guard<mutex> lock(queue_mutex);
 		q.push(i);

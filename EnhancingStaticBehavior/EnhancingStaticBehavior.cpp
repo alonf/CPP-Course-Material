@@ -323,7 +323,7 @@ REGISTER_SAMPLE("constexpr", constexpr_sample);
 
 #pragma region variable template
 
-#ifndef _WIN32
+//#ifndef _WIN32
 template<typename T>
 	constexpr T pi = T(3.14159265358979323856);
 
@@ -342,7 +342,7 @@ void variable_template()
 }
 
 REGISTER_SAMPLE("Variable Template", variable_template);
-#endif
+//#endif
 #pragma endregion
 
 
@@ -350,8 +350,12 @@ REGISTER_SAMPLE("Variable Template", variable_template);
 
 [[ noreturn ]] void just_throws()
 {
+	while (true)
+		;
 	throw "error...";
 }
+
+
 
 [[ deprecated ]] void consider_using_another_function()
 {

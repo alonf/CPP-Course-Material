@@ -49,7 +49,7 @@ namespace BTSE //Best Task Scheduler Ever
 			if (partSize <= 0)
 				partSize = 1;
 
-			std::function<void(int, int)> runLoop = [=] (int from, int to) mutable
+			std::function<void(int, int)> runLoop = [=] (int from, int to) 
 			{
 				while (from < to)
 					f(from++);

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <experimental/generator>
+#include <algorithm>
 
 using namespace std::experimental;
 using namespace std;
@@ -30,4 +31,8 @@ int main()
 			break;
 		cout << v << endl;
 	}
+
+	auto v = fib();
+	auto result = find_if(begin(v), end(v), [](auto x) {return x > 10; });
+	cout << *result;
 }

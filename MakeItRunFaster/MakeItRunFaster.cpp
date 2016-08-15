@@ -277,7 +277,7 @@ double measure_time(int times, function<void(void)> action)
 void rvalue_references_move()
 {
 	const int OUTER_ITERATIONS = 5;
-	const int INNER_ITERATIONS = 10000;
+	const int INNER_ITERATIONS = 100000;
 
 	double time = measure_time(OUTER_ITERATIONS, [=]()
 	{

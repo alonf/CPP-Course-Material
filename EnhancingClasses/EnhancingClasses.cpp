@@ -110,7 +110,7 @@ private:
 	int _a;
 public:
 	Base(int a) : _a(a) {}
-	void Print()
+	void Print() const
 	{
 		cout << _a << endl;
 	}
@@ -149,7 +149,8 @@ class DefSample
 public:
 	DefSample(int a) : _a(a) {}
 	DefSample() = default;
-	void Print() { cout << _a << endl; }
+	void Print() const
+	{ cout << _a << endl; }
 };
 
 void defaulted_and_deleted_functions()

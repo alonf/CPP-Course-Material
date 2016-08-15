@@ -371,7 +371,8 @@ void non_restricted_union()
 {
 	NonRestricted u1(string("Test"));
 	u1.m_nonTrivial.Print();
-	//u1.m_c = 10; //very dangerous
+	u1.m_c = 10; //very dangerous
+	u1.m_nonTrivial.Print();
 	NonRestricted u2(65);
 	cout << u2.m_c << endl;
 }
