@@ -9,6 +9,7 @@
 #include <numeric>
 #include <vector>
 #include <functional>
+#include <list>
 using namespace std;
 
 
@@ -202,7 +203,56 @@ REGISTER_SAMPLE("Local & Unnamed Types as Template Arguments", local_unamed_type
 #pragma endregion
 
 
-//TODO: extern template
+#pragma region Extern Template
+#include "print.h"
+
+extern template extern_template <Print>;
+
+void extern_template_sample()
+{
+	extern_template<Print>().act();
+
+}
+REGISTER_SAMPLE("Extern Taemplate", extern_template_sample);
+#pragma endregion
+
+
+#pragma region Template Alias
+
+template<class V, class L>
+class double_container
+{
+	vector<V> m_v;
+	list<L> m_l;
+
+public:
+	double_container(initializer_list<tuple<V&&,L&&>> &&list)
+	{
+		for (auto &&p : list)
+		{
+			m_v.push_back(forward<V>(get<0>(p)));
+			m_l.push_back(forward<L>(get<1>(p)));
+		}
+	}
+
+	//...
+};
+
+template<>
+using string_int_container = double_container<string, int>;
+
+template<class V>
+using same_type_container = double_container<V, V>;
+
+void template_alias_sample()
+{
+	string_int_container<> d{ make_tuple("A"s, 65), make_tuple("B"s, 66) };
+	same_type_container<int> s{ make_tuple(1,1), make_tuple(2,3) };
+
+}
+REGISTER_SAMPLE("Template Alias", template_alias_sample);
+#pragma endregion
+
 //TODO: Template aliases
 
 

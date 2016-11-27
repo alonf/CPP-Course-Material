@@ -142,10 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Print.h" />
     <ClInclude Include="..\register_sample.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\EnhancingStaticBehavior.cpp" />
+    <ClCompile Include="..\Print.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

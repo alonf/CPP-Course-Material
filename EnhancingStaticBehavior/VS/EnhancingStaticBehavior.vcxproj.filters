@@ -18,9 +18,15 @@
     <ClInclude Include="..\register_sample.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Print.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\EnhancingStaticBehavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Print.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
