@@ -381,5 +381,110 @@ REGISTER_SAMPLE("non restricted union", non_restricted_union);
 #pragma endregion
 
 
-
 //TODO: Inline namespaces
+
+#if _MSC_VER >= 1910 
+#include <variant>
+#include <optional>
+#include <any>
+
+void varaint_sample()
+{
+	variant<int, float> v, w;
+	v = 12; // v contains int
+	int i = std::get<int>(v);
+	cout << i << endl;
+
+	w = std::get<int>(v);
+	cout << std::get<int>(w) << endl;
+	w = std::get<0>(v); // same effect as the previous line
+	w = v; // same effect as the previous line
+	//  std::get<double>(v); // error: no double in [int, float]
+	//  std::get<3>(v);      // error: valid index values are 0 and 1
+	try
+	{
+		std::get<float>(w); // w contains int, not float: will throw
+	}
+	catch (std::bad_variant_access& ex)
+	{
+		cerr << ex.what() << endl;
+	}
+
+	vector<variant<int, string>> vv = { "A", 1, "B", 2, "C", 3 };
+	for (auto &&e : vv)
+	{
+		visit([](auto &&arg) { cout << arg << ","; }, e);
+	}
+	cout << endl;
+
+	class Selector
+	{
+	public:
+		void operator()(int i) const { cout << "Int: " << i << endl; } 
+		void operator()(const string &s) const { cout << "String: " << s << endl; } 
+	};
+
+	for (auto &&e : vv)
+	{
+		visit(Selector(), e);
+	}
+}
+REGISTER_SAMPLE("variant", varaint_sample);
+
+void any_sample()
+{    
+	any value {42};// int 42
+	cout << any_cast<int>(value) << endl;
+	value = 3.14;// double 3.14
+	cout << any_cast<double>(value) << endl;
+	value = "Alon"s;// string "Alon"
+	cout << any_cast<string>(value) << endl;
+	
+	if(value.has_value()) 
+	{ 
+		if (value.type() == typeid(std::string)) 
+		{
+			std::cout << "value=" << std::any_cast<std::string>(value) << std::endl;
+		}
+	}
+
+	try
+	{
+		cout << any_cast<double>(value) << endl; // value contains string, not double: will throw
+	}
+	catch (std::bad_any_cast& ex)
+	{
+		cerr << ex.what() << endl;
+	}
+}
+REGISTER_SAMPLE("any", any_sample);
+
+
+
+void print_value(optional<string> v)
+{
+	if (v.has_value())
+	{
+		cout << "The value is " << v.value() << endl;
+	}
+	else
+	{
+		cout << "The value is empty" << endl;
+	}
+
+	cout << "The value is " << v.value_or("empty") << endl;
+}
+void optional_sample()
+{
+	optional<string> v;
+	print_value(v);
+	v = "Alon"s;
+	print_value(v);
+	v = nullopt;
+	print_value(v);
+	print_value("Liat"s);
+	print_value({});
+}
+REGISTER_SAMPLE("optional", optional_sample);
+#endif
+
