@@ -43,16 +43,16 @@ Tree::Tree(int depth)
 
 future<int> Tree::Sum()
 {
-	return __await SubTreeSum(_pRoot);	
+	return co_await SubTreeSum(_pRoot);	
 }
 
 future<int> Tree::SubTreeSum(TreeNode::tree_node_ptr subTreeRoot) 
 {
 	auto leftSubTree = subTreeRoot->GetLeft();
-	int leftSum = leftSubTree ? __await SubTreeSum(leftSubTree) : 0;
+	int leftSum = leftSubTree ? co_await SubTreeSum(leftSubTree) : 0;
 
 	auto rightSubTree = subTreeRoot->GetRight();
-	int rightSum = rightSubTree ? __await SubTreeSum(rightSubTree) : 0;
+	int rightSum = rightSubTree ? co_await SubTreeSum(rightSubTree) : 0;
 
 	return subTreeRoot->GetValue() + leftSum + rightSum;
 }

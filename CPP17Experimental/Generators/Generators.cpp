@@ -15,7 +15,7 @@ generator<int> fib()
 	int a = 0;
 	int b = 1;
 	for (;;) {
-		__yield_value a;
+		co_yield a;
 		auto next = a + b;
 		a = b;
 		b = next;
