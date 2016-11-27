@@ -474,6 +474,7 @@ void print_value(optional<string> v)
 
 	cout << "The value is " << v.value_or("empty") << endl;
 }
+
 void optional_sample()
 {
 	optional<string> v;
@@ -484,6 +485,7 @@ void optional_sample()
 	print_value(v);
 	print_value("Liat"s);
 	print_value({});
+	
 }
 REGISTER_SAMPLE("optional", optional_sample);
 #endif
