@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.25920.0
+VisualStudioVersion = 15.0.26014.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaprogrammingExample", "..\Basic\MetaprogrammingExample\VS\MetaprogrammingExample.vcxproj", "{41052C6A-F890-4260-8A00-5C50D25D40CE}"
 EndProject
@@ -70,6 +70,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CPP20_experimental", "CPP20_experimental", "{B53B3B7E-87DB-4874-8186-6A461BB5BD0A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generators", "..\CPP17Experimental\Generators\Generators.vcxproj", "{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadSafeStrTok", "..\ThreadSafeStrTok\ThreadSafeStrTok.vcxproj", "{35AB4609-7F1F-4921-8644-E574831FC543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -295,6 +297,14 @@ Global
 		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x64.Build.0 = Release|x64
 		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x86.ActiveCfg = Release|Win32
 		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417}.Release|x86.Build.0 = Release|Win32
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Debug|x64.ActiveCfg = Debug|x64
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Debug|x64.Build.0 = Debug|x64
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Debug|x86.ActiveCfg = Debug|Win32
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Debug|x86.Build.0 = Debug|Win32
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Release|x64.ActiveCfg = Release|x64
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Release|x64.Build.0 = Release|x64
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Release|x86.ActiveCfg = Release|Win32
+		{35AB4609-7F1F-4921-8644-E574831FC543}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -324,5 +334,6 @@ Global
 		{0A0A490B-8EFC-4923-A706-EA21E95D1124} = {5BB2CB4D-77DB-49B4-BF00-73919F0E11CE}
 		{B46C57AF-63DA-4551-B98B-369EFC943D44} = {5BB2CB4D-77DB-49B4-BF00-73919F0E11CE}
 		{B7D6CCF7-58A7-4C21-B2E3-4B7A76B7F417} = {B53B3B7E-87DB-4874-8186-6A461BB5BD0A}
+		{35AB4609-7F1F-4921-8644-E574831FC543} = {7625C3C5-0103-4345-BBEB-0A2E0501FEB0}
 	EndGlobalSection
 EndGlobal
