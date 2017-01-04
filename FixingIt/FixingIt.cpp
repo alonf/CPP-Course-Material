@@ -139,7 +139,7 @@ void enum_sample()
 
 	enum newer_enum : unsigned long long
 	{
-		newer_value = ~static_cast<unsigned long long>(0)
+		newer_value = ~0ULL
 	};
 
 	cout << "Old size: " << sizeof(old_value) << endl;
@@ -206,10 +206,10 @@ REGISTER_SAMPLE("scope enum sample", scope_enum_sample);
 
 #pragma region exception_ptr
 
+
 void execute_on_another_thread(function<void()> background_task)
 {
 	exception_ptr exp_ptr;
-
 	thread t([&]()
 	{
 		try
@@ -232,13 +232,16 @@ void execute_on_another_thread(function<void()> background_task)
 
 void exception_ptr_sample()
 {
+	string error;
+
 	try
 	{
-		execute_on_another_thread([]
+		execute_on_another_thread([&]
 		{
 			stringstream msg;
 			msg << "Error in thread id: " << this_thread::get_id();
-			throw runtime_error(msg.str().c_str());
+			error = msg.str();
+			throw runtime_error(error);
 		});
 	}
 	catch (exception &e)
