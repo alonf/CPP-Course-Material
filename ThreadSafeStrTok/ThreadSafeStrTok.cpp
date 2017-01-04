@@ -5,7 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <array>
-#include <allocators>
+
 using namespace std;
 
 template<typename T>
@@ -61,25 +61,25 @@ int main()
 
 	array<tuple<string,string>, 10> data =
 	{
-		make_tuple("A,B,C"s, ","s),
-		make_tuple(",,....--"s, ",.-"s),
-		make_tuple("alon"s,""s),
-		make_tuple(""s,""s),
-		make_tuple("ab,cd,x"s,","s),
-		make_tuple("A|B|CD|"s,"|||"s),
-		make_tuple(""s,"abc"s),
-		make_tuple("lskfjlskfjsldkgjsldf"s,","s),
-		make_tuple("@#$%^&*()"s,"$"s),
+		make_tuple("A,B,C", ","),
+		make_tuple(",,....--", ",.-"),
+		make_tuple("alon",""),
+		make_tuple("",""),
+		make_tuple("ab,cd,x",","),
+		make_tuple("A|B|CD|","|||"),
+		make_tuple("","abc"),
+		make_tuple("lskfjlskfjsldkgjsldf",","),
+		make_tuple("@#$%^&*()","$"),
 		make_tuple("A","A")
 	};
 
 	for(int i = 0; i < threads.size(); ++i)
 	{
-		auto t(thread([&]()
+		auto t(thread([&](int x)
 		{
-			tester(get<0>(data[i]), get<1>(data[i]));
+			tester(get<0>(data[x]), get<1>(data[x]));
 			//apply(tester, data[i]);
-		}));
+		},i));
 		threads[i] = move(t);
 	}
 	for (thread &x : threads)
