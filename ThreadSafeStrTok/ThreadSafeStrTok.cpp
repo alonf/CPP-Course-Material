@@ -5,6 +5,8 @@
 #include <iostream>
 #include <thread>
 #include <array>
+#include <sstream>
+#include <mutex>
 
 using namespace std;
 
@@ -12,48 +14,62 @@ template<typename T>
 using string_t = basic_string<T, char_traits<T>, allocator<T>>;
 
 template<typename T>
-string_t<T> StrTok(string_t<T> text, string_t<T> delimiters)
+string_t<T> StrTok(const string_t<T> &text, const string_t<T> &delimiters)
 {
-	thread_local string_t<T> original;
-	thread_local typename string_t<T>::iterator current_offset = begin(original);
+	typedef string_t<T> str_t;
+	typedef typename string_t<T>::iterator iter_t;
+
+	thread_local str_t original;
+	thread_local iter_t current_offset = begin(original);
+	
+	//Start new string 
 	if (!text.empty())
 	{
 		original = text;
 		current_offset = begin(original);
 	}
 	
-	auto word_start = find_if(current_offset, end(original),
-		[&](T element)
-		{
-			return find(begin(delimiters), end(delimiters), element)
-				== end(delimiters);
-		}
-	);
-
-	current_offset = find_if(word_start, end(original),
-		[&](T element)
+	//Internal function to find the first character that
+	//appears after the delimeter, or the last character 
+	//before the delimiter
+	function<iter_t(iter_t, bool)> find_first = 
+		[&](iter_t start, bool is_before_delimiters)
 	{
-		return find(begin(delimiters), end(delimiters), element)
-			!= end(delimiters);
-	}
-	);
+		start = find_if(start, end(original),
+			[&](T element)
+		{
+			auto f = find(begin(delimiters), end(delimiters), element);
+			return is_before_delimiters ?
+				f != end(delimiters) : 
+				f == end(delimiters);
+		});
+		return start;
+	};
 
-	return string_t<T>(word_start, current_offset);
+	auto word_start = find_first(current_offset, false);
+	current_offset = find_first(word_start, true);
 
+	return str_t(word_start, current_offset);
 }
 
 int main()
 {
-	function<void(string, string)> tester = [](string word, string delimiter)
+	mutex cout_mutex;
+	function<void(string, string)> tester = [&cout_mutex](string word, string delimiter)
 	{
+		stringstream result;
 		word = StrTok(word, delimiter);
-		cout << "thread id:" << this_thread::get_id() << endl;
+		result << "thread id:" << hex << this_thread::get_id() << ":\t|";
 		while (!word.empty())
 		{
 			{
-				cout << word << "-";
+				result << word << "|";
 			}
 			word = StrTok(string(), delimiter);
+		}
+		{
+			lock_guard<mutex> lock(cout_mutex);
+			cout << result.str() << endl;
 		}
 	};
 
@@ -75,7 +91,7 @@ int main()
 
 	for(int i = 0; i < threads.size(); ++i)
 	{
-		auto t(thread([&](int x)
+		auto t(thread([&data,&tester](int x)
 		{
 			tester(get<0>(data[x]), get<1>(data[x]));
 			//apply(tester, data[i]);
@@ -84,8 +100,6 @@ int main()
 	}
 	for (thread &x : threads)
 		x.join();
-
-	
 
     return 0;
 }
